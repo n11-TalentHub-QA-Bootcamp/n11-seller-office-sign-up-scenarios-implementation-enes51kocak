@@ -4,12 +4,18 @@ import io.cucumber.java.en.*;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.ensure.Ensure;
 import net.thucydides.core.annotations.Managed;
 import org.openqa.selenium.WebDriver;
 import starter.selleroffice.navigation.loginAndSignup.Login;
 import starter.selleroffice.navigation.loginAndSignup.SignUp;
 import starter.selleroffice.navigation.pages.sellerOfficeLoginPage;
+import starter.selleroffice.navigation.pages.sellerOfficeSignUpPage;
 import starter.selleroffice.navigation.tasks.NavigateTo;
+
+import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.hasValue;
+import static net.thucydides.core.matchers.BeanMatchers.the;
 
 
 public class SellerOfficeStepDefinitions {
@@ -50,7 +56,9 @@ public class SellerOfficeStepDefinitions {
 
     @Then("verify user see an error message displayed")
     public void verifyUserSeeAnErrorMessageDisplayed() {
-
+        actor.attemptsTo(
+                Ensure.that(sellerOfficeSignUpPage.ERROR_MESSAGE).text().isEqualToIgnoringCase("Lütfen sözleşmeyi kabul ettiğinizi onaylayın.")
+        );
     }
 
 
