@@ -13,6 +13,6 @@ public class sellerOfficeSignUpPage {
     public static Target SHOP_NAME_FIELD = Target.the("shop name textbox").located(By.id("nicknameInputText"));
     public static Target TERMS_AND_CONDITIONS_BTN = Target.the("terms and conditions radio button").located(By.id("nicknameInputText"));
     public static Target SIGN_UP_BTN = Target.the("sign up button").located(By.id("loginCommandButton"));
-    public static Target ERROR_MESSAGE = Target.the("error message for radio button").located(By.id("j_id261_j_id_cy"));
+    public static Target ERR_MSSG = Target.the("error message for radio button").located(By.id("j_id261_j_id_cy"));
 
 }

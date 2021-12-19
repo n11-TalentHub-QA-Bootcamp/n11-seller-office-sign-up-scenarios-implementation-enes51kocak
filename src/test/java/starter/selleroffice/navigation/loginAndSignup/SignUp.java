@@ -7,6 +7,7 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.DoubleClickOnElement;
 import net.serenitybdd.screenplay.actions.SendKeys;
+import net.serenitybdd.screenplay.waits.WaitUntilTargetIsReady;
 import starter.selleroffice.navigation.pages.sellerOfficeLoginPage;
 import starter.selleroffice.navigation.pages.sellerOfficeSignUpPage;
 
@@ -29,6 +30,7 @@ public class SignUp implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
+
                 Click.on(sellerOfficeSignUpPage.USERNAME_FIELD),
                 SendKeys.of(this.username).into(sellerOfficeSignUpPage.USERNAME_FIELD),
                 Click.on(sellerOfficeSignUpPage.PASSWORD_FIELD),
@@ -42,7 +44,7 @@ public class SignUp implements Task {
                 Click.on(sellerOfficeSignUpPage.SHOP_NAME_FIELD),
                 SendKeys.of(this.shopName).into(sellerOfficeSignUpPage.SHOP_NAME_FIELD),
                 Click.on(sellerOfficeSignUpPage.SIGN_UP_BTN),
-                Click.on(sellerOfficeSignUpPage.SIGN_UP_BTN) //works with double click
+                Click.on(sellerOfficeSignUpPage.SIGN_UP_BTN) //works with double click only
         );
     }
 

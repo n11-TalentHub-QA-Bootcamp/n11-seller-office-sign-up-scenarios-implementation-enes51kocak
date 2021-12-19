@@ -14,8 +14,6 @@ import starter.selleroffice.navigation.pages.sellerOfficeSignUpPage;
 import starter.selleroffice.navigation.tasks.NavigateTo;
 
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.hasValue;
-import static net.thucydides.core.matchers.BeanMatchers.the;
 
 
 public class SellerOfficeStepDefinitions {
@@ -50,14 +48,14 @@ public class SellerOfficeStepDefinitions {
     @And("user fills the required fields but not accept the aggreement")
     public void userFillsTheRequiredFieldsButNotAcceptTheAggreement() {
         actor.attemptsTo(
-                SignUp.signUpTheSystem("veli", "velihan2734.", "veli@gmail.co", "delivelibakkal")
+                SignUp.signUpTheSystem("usernametest", "veli2734HAN.", "velican@gmail.co", "delivelibakkal")
         );
     }
 
     @Then("verify user see an error message displayed")
     public void verifyUserSeeAnErrorMessageDisplayed() {
         actor.attemptsTo(
-                Ensure.that(sellerOfficeSignUpPage.ERROR_MESSAGE).text().isEqualToIgnoringCase("Lütfen sözleşmeyi kabul ettiğinizi onaylayın.")
+                Ensure.that(sellerOfficeSignUpPage.ERR_MSSG).text().isEqualToIgnoringCase("Lütfen sözleşmeyi kabul ettiğinizi onaylayın.")
         );
     }
 
